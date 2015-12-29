@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+{% for st in student %}
+    Student:
+    <li>{{ st }}</li>
+    Courses:
+    {% for c in st.course.all %}
+    <li>{{ c }}</li>
+    {% endfor %}
+{% endfor %}
+
+
+
+</body>
+</html>
