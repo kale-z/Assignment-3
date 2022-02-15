@@ -6,7 +6,7 @@
 </head>
 <body>
 {% for st in teacher %}
-    <li>{{st}}</li>
+    <li>{{ st.first_name }} | {{ st.last_name }} | {{ st.office }} | {{ st.phone }} | {{ st.email }}</li>
 {% endfor %}
 </body>
 </html>

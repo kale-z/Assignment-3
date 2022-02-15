@@ -5,13 +5,15 @@
     <title></title>
 </head>
 <body>
-<p>Name: index</p>
+<p>Name: {{ index }}</p>
 
 <p>Words:</p>
 
-{% for k,v in d %}
-    <p>{{ k }} : {{ v }}</p>
-{% endfor %}
+<ul>
+    {% for item in item_list %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>

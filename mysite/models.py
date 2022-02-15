@@ -25,7 +25,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
-    publisher = models.ForeignKey(Publisher)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     publication_date = models.DateField()
 
     def __unicode__(self):
@@ -53,5 +53,5 @@ class Course(models.Model):
     classroom = models.CharField(max_length=50)
     code = models.CharField(max_length=60)
     time = models.CharField(max_length=50)
-    teacher = models.ForeignKey(Teacher)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     student = models.ManyToManyField(Student)

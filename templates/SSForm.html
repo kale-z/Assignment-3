@@ -6,17 +6,14 @@
 </head>
 <body>
 
-
 {% for st in student %}
     Student:
-    <li>{{ st }}</li>
+    <li>{{ st.first_name }} {{ st.last_name }}</li>
     Courses:
     {% for c in st.course.all %}
     <li>{{ c }}</li>
     {% endfor %}
 {% endfor %}
-
-
 
 </body>
 </html>

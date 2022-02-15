@@ -58,6 +58,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='course',
             name='teacher',
-            field=models.ForeignKey(to='mysite.Teacher'),
+            field=models.ForeignKey(to='mysite.Teacher', on_delete=models.CASCADE),
         ),
     ]

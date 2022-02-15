@@ -5,8 +5,9 @@
     <title></title>
 </head>
 <body>
+
 {% for st in course %}
-    <li>{{st}}</li>
+    <li>{{ st.name }}, {{ st.classroom }}, {{ st.time }}</li>
 {% endfor %}
 </body>
 </html>

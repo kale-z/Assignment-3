@@ -53,22 +53,22 @@ class studentform(forms.Form):
                      email=self.cleaned_data["email"],
                      )
         Form.save()
-        for item in self.cleaned_data['courses']:
-            Form.course.add(item)
-
+        # for item in self.cleaned_data['courses']:
+        #     Form.course.add(item)
 
 class courseform(forms.Form):
-    course_name = forms.CharField(max_length=50)
+    name = forms.CharField(max_length=50)
     code = forms.CharField(max_length=30)
     classroom = forms.CharField(max_length=30)
     time = forms.TimeField()
     teacher = forms.ModelChoiceField(queryset=Teacher.objects.all())
 
     def save_course(self):
-        Form = Course(course_name=self.cleaned_data["course_name"],
+        Form = Course(name=self.cleaned_data["name"],
                      code=self.cleaned_data["code"],
                      classroom=self.cleaned_data["classroom"],
-                     time=self.cleaned_data['time'],teacher=self.cleaned_data['teacher'])
+                     time=self.cleaned_data['time'],
+                     teacher=self.cleaned_data['teacher'])
 
         Form.save()
 

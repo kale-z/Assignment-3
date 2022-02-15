@@ -14,35 +14,36 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.urls import re_path
 from django.contrib import admin
 from mysite import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^histogram/', views.freQ),
-    url(r'^display/', views.search_form),
-    url(r'^search/', views.search),
-    url(r'^hello/$', views.hello),
-    url(r'^time/$', views.current_datetime),
-    url(r'^time/plus/(\d{1,2})/$', views.hours_ahead),
-    url(r'^latest/$', views.latest_books),
-    url(r'^meta/$',views.display_meta),
-    url(r'^search-form/$', views.search_form),
-    url(r'^search/$', views.search),
-    url(r'^contact-form/$', views.contact_form),
-    url(r'^contact/$', views.contact),
-    url(r'^contactV2/$', views.contact_formsframework),
-    url(r'^contact/thanks/$', views.hello),
-    url(r'^addauthor/$',views.addauthor),
-    url(r'^all-authors/$',views.all_authors),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^histogram/', views.freQ),
+    re_path(r'^display/', views.search_form),
+    re_path(r'^search/', views.search),
+    re_path(r'^hello/$', views.hello),
+    re_path(r'^time/$', views.current_datetime),
+    re_path(r'^time/plus/(\d{1,2})/$', views.hours_ahead),
+    re_path(r'^latest/$', views.latest_books),
+    re_path(r'^meta/$', views.display_meta),
+    re_path(r'^search-form/$', views.search_form),
+    re_path(r'^search/$', views.search),
+    re_path(r'^contact-form/$', views.contact_form),
+    re_path(r'^contact/$', views.contact),
+    re_path(r'^contactV2/$', views.contact_formsframework),
+    re_path(r'^contact/thanks/$', views.hello),
+    re_path(r'^addauthor/$', views.addauthor),
+    re_path(r'^all-authors/$', views.all_authors),
 
     # Assignment [3] part
     #=================================================
-    url(r'^$', views.home),
-    url(r'^teacher/$', views.addteacher),
-    url(r'^student/$', views.addstudent),
-    url(r'^course/$', views.addcourse),url(r'^teachersuccess/$', views.succesteacher),url(r'^coursesuccess/$', views.succescourse),url(r'^studentssuccess/$', views.successtudent)
+    re_path(r'^$', views.home),
+    re_path(r'^teacher/$', views.addteacher),
+    re_path(r'^student/$', views.addstudent),
+    re_path(r'^course/$', views.addcourse), re_path(r'^teachersuccess/$', views.succesteacher),
+    re_path(r'^coursesuccess/$', views.succescourse), re_path(r'^studentssuccess/$', views.successtudent)
     #=================================================
 
 ]
