@@ -1,4 +1,4 @@
-# Django Practice [ 3 ]
+# Django Multifunction
 This is my third Django practice including variety of functions trying to get used to Django's structure.
 
 
